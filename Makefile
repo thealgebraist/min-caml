@@ -59,9 +59,7 @@ min-caml.html: main.mli main.ml id.ml m.ml s.ml \
 		simm.mli simm.ml regAlloc.mli regAlloc.ml emit.mli emit.ml
 	./to_sparc
 	caml2html -o min-caml.html $^
-	# sed 's/.*<\/title>/MinCaml Source Code<\/title>/g' < min-caml.html > min-caml.tmp.html
 	mv min-caml.tmp.html min-caml.html
-	# sed 's/charset=iso-8859-1/charset=euc-jp/g' < min-caml.html > min-caml.tmp.html
 	mv min-caml.tmp.html min-caml.html
 	ocaml str.cma anchor.ml < min-caml.html > min-caml.tmp.html
 	mv min-caml.tmp.html min-caml.html
